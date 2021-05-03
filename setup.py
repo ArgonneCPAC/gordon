@@ -15,4 +15,5 @@ setup(
     install_requires=["numpy", "numba", "jax"],
     packages=find_packages(),
     url="https://github.com/ArgonneCPAC/gordon",
+    package_data={"gordon": ("tests/testing_data/*.dat",)},
 )
