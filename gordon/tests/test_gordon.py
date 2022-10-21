@@ -10,7 +10,7 @@ from ..kernel_weighted_hist import triweighted_kernel_histogram_with_derivs as t
 from ..sigmoid_smhm import _logsm_from_logmhalo_jax_kern
 
 
-NM = os.environ.get("GORDON_NM", 500)
+NM = os.environ.get(int("GORDON_NM"), 500)
 LOGM = np.linspace(8, 15, NM)
 PARAMS = np.array(list(DEFAULT_PARAM_VALUES.values()))
 
