@@ -1,5 +1,6 @@
 """
 """
+import os
 import numpy as np
 from jax import grad as jax_grad
 from jax import vmap as jax_vmap
@@ -8,7 +9,9 @@ from ..sigmoid_smhm import logsm_from_logmhalo_jax, DEFAULT_PARAM_VALUES
 from ..kernel_weighted_hist import triweighted_kernel_histogram_with_derivs as twhist
 from ..sigmoid_smhm import _logsm_from_logmhalo_jax_kern
 
-LOGM = np.linspace(8, 15, 500)
+
+NM = os.environ.get("GORDON_NM", 500)
+LOGM = np.linspace(8, 15, NM)
 PARAMS = np.array(list(DEFAULT_PARAM_VALUES.values()))
 
 
