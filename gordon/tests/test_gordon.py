@@ -2,6 +2,7 @@
 """
 import os
 import numpy as np
+from jax import numpy as jax_np
 from jax import grad as jax_grad
 from jax import vmap as jax_vmap
 from jax import jit as jax_jit
@@ -11,7 +12,7 @@ from ..sigmoid_smhm import _logsm_from_logmhalo_jax_kern
 
 
 NM = int(os.environ.get("GORDON_NM", 500))
-LOGM = np.linspace(8, 15, NM)
+LOGM = jax_np.linspace(8, 15, NM)
 PARAMS = np.array(list(DEFAULT_PARAM_VALUES.values()))
 
 
