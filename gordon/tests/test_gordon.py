@@ -24,8 +24,8 @@ if NUM_DEVICES > local_device_count():
   print("Error: More device("+str(NUM_DEVICES)+") was requested than supported("+str(local_device_count)+")")
   exit(-1)
 
-if NM % local_device_count():
-  print("Error: GORDON_NM value : "+str(NM)+" cannot be evenly splitted into: "+str(local_device_count())+" devices")
+if NM % NUM_DEVICES:
+  print("Error: GORDON_NM value : "+str(NM)+" cannot be evenly splitted into: "+str(NUM_DEVICES)+" devices")
   exit(-1)
 
 # allocate data on CPU
